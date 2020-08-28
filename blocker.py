@@ -1,20 +1,11 @@
 import os
 import time
-import getpass
-import threading
-
-def fix_login():
-    print("You did not run this script as a superuser, please login.")
-    password = getpass.getpass()
-    print(os.getcwd())
-    command = 'python37 blocked.py'
-    os.popen(f"sudo -S {command}", 'w').write(password)
 
 website_list = []
 def blocked_collection():
     global website_list
     print("What websites would you like to block? (please enter like this: www.facebook.com)")
-    websites_to_block = input()
+    websites_to_block = str(input())
     
     if "www." not in websites_to_block:
         print("You did not enter the website in the right format, try again.")
